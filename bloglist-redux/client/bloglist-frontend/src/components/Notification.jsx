@@ -14,11 +14,7 @@ const Notification = ({ notification }) => {
     borderRadius: '5px',
   }
 
-  return (
-    <div style={style}>
-      {message}
-    </div>
-  )
+  return <div style={style}>{message}</div>
 }
 
 export default Notification

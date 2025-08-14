@@ -53,3 +53,10 @@ export const deleteBlog = (object) => {
     dispatch(removeBlog(object))
   }
 }
+
+export const commentBlog = ((id, object) => {
+  return async dispatch => {
+    const blog = await blogService.comment(id, object)
+    dispatch(replaceBlog(blog))
+  }
+})

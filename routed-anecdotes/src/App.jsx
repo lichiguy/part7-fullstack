@@ -134,10 +134,13 @@ const App = () => {
   const [notification, setNotification] = useState('')
 
   const match = useMatch('/anecdotes/:id')
+  console.log(match)
 
   const anecdote = match
     ? anecdotes.find(anecdote => anecdote.id === Number(match.params.id))
     : null
+
+  console.log(anecdote)
 
   const addNew = (anecdote) => {
     anecdote.id = Math.round(Math.random() * 10000)

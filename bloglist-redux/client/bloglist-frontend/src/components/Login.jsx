@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Table, Form, Button } from 'react-bootstrap'
 
 const Login = ({ doLogin }) => {
   const [username, setUsername] = useState('')
@@ -11,26 +12,34 @@ const Login = ({ doLogin }) => {
     setPassword('')
   }
 
+  const margin = {
+    marginTop: 15
+  }
+
   return (
-    <form onSubmit={handleLogin}>
-      <label>
-        Username:
-        <input
-          type="text"
-          data-testid='username'
-          value={username}
-          onChange={(e) => setUsername(e.target.value)} />
-      </label>
-      <label>
-        Password:
-        <input
-          type="password"
-          value={password}
-          data-testid='password'
-          onChange={(e) => setPassword(e.target.value)} />
-      </label>
-      <input type="submit" value="Login" />
-    </form>
+    <Form onSubmit={handleLogin}>
+      <Form.Group>
+        <Form.Label>
+          Username:
+          <Form.Control
+            type="text"
+            data-testid='username'
+            value={username}
+            onChange={(e) => setUsername(e.target.value)} />
+        </Form.Label>
+      </Form.Group>
+      <Form.Group>
+        <Form.Label>
+          Password:
+          <Form.Control
+            type="password"
+            value={password}
+            data-testid='password'
+            onChange={(e) => setPassword(e.target.value)} />
+        </Form.Label>
+      </Form.Group>
+      <Button style={margin} type="submit">Login</Button>
+    </Form>
   )
 }
 

@@ -27,6 +27,7 @@ const useResource = (baseUrl) => {
 
   useEffect(() => {
     fetchResourses()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [baseUrl])
 
   const create = async (resource) => {

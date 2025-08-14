@@ -1,0 +1,9 @@
+h2 {
+    font-size: 50px;
+    font-style: italic;
+}
+
+p {
+    color: red;
+    position: relative;
+}
